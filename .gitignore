@@ -1,5 +1,6 @@
-__pycache__
-.env
+__pycache__/
+*.env
 *.pyc
 *.pyo
 *.pyd
+poke.api.env/
