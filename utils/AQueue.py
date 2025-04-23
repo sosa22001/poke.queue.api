@@ -2,6 +2,10 @@ import os
 from azure.storage.queue import QueueClient, BinaryBase64DecodePolicy, BinaryBase64EncodePolicy
 from dotenv import load_dotenv
 
+import logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
 load_dotenv()
 
 class AQueue:
@@ -13,6 +17,7 @@ class AQueue:
         self.queue_client.message_encode_policy = BinaryBase64EncodePolicy()
 
     async def insert_message_on_queue(self, message: str):
+        logger.info(f"Enviando mensaje a la cola: {message}")
         message_bytes = message.encode('utf-8')
         self.queue_client.send_message(
             self.queue_client.message_encode_policy.encode(message_bytes)

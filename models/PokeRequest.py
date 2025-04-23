@@ -16,4 +16,6 @@ class PokeRequest(BaseModel):
                             description="Status of the request pokemon",
                             pattern="^(sent|completed|failed|inprogress)$")
     
+    sample_size: Optional[int] = Field(None, gt=0, description="Cantidad máxima de Pokémon en el reporte")
+    
     
