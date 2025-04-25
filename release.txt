@@ -1,6 +1,6 @@
 docker buildx build --platform linux/amd64 -t pokeapi:latest . --load
 
-docker tag pokeapi:latest acrpokequeuedevijul.azurecr.io/pokeapi:0.2.0
+docker tag pokeapi:latest acrpokequeuedevijul.azurecr.io/pokeapi:0.4.0
 
 docker tag pokeapi:latest acrpokequeuedevijul.azurecr.io/pokeapi:latest
 
@@ -8,4 +8,4 @@ az acr login --name acrpokequeuedevijul
 
 docker push acrpokequeuedevijul.azurecr.io/pokeapi:latest
 
-docker push acrpokequeuedevijul.azurecr.io/pokeapi:0.2.0
+docker push acrpokequeuedevijul.azurecr.io/pokeapi:0.4.0
